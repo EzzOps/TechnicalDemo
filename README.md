@@ -67,3 +67,41 @@ In the context of Go applications, a distroless image provides advantages over a
 - **gcr.io/distroless/base**: This image contains a minimal Linux, glibc-based system. It is intended for use directly by "mostly-statically compiled" languages like Go, Rust or D. Statically compiled applications (Go) that do not require libc can use the gcr.io/distroless/static image, which contains: ca-certificates, a /etc/passwd entry for a root user, a /tmp directory, and tzdata. Applications that require libc but do not need libssl can use the gcr.io/distroless/base-nossl, which contains all of the packages in gcr.io/distroless/static, and glibc. Most other applications (and Go apps that require libc/cgo) should start with gcr.io/distroless/base, which contains all of the packages in gcr.io/distroless/static, glibc, libssl, and openssl (only debian11, removed from debian12 onward).
 
 Usage: Users are expected to include their compiled application and set the correct cmd in their image.
+
+
+distroless which means it has no package manager ans shell
+
+
+Multi-Stage Builds
+Multi-stage builds in Docker allow you to separate the build process into multiple steps, each with its own base image and set of commands. This can help to optimize the size and security of the final Docker image.
+
+Dockerfile Stages
+Stage 1: Go Application Build
+COPY . /app/
+
+RUN go mod download; \
+    CGO_ENABLED=0 go build -ldflags="-s -w -extldflags=-static" -o bce -v .
+Copies the current directory (which contains the Go application) into the /app directory in the Docker image.
+Downloads the Go module dependencies.
+Builds the Go application with static linking, creating a standalone executable named bce.
+Stage 2: Final Docker Image
+FROM scratch
+
+WORKDIR /app
+COPY --from=builder /app/bce /app/bce
+COPY static /app/static/
+COPY templates /app/templates/
+
+EXPOSE 5000
+ENTRYPOINT ["/app/bce"]
+Uses the scratch image, which is an empty Docker image.
+Sets the working directory to /app.
+Copies the Go application from the builder stage into the final image.
+Copies the static and templates directories into the final image.
+Exposes port 5000 for the application to listen on.
+Sets the entry point of the Docker container to the Go application.
+
+Key Concepts
+Scratch Image: An empty Docker image. Useful for creating very minimal Docker images, especially for statically compiled languages like Go.
+Static Linking: The process of including all library dependencies into the executable during the build process. This creates a standalone executable that can run in any environment, including a Docker container based on the scratch image.
+Multi-Stage Builds: A feature in Docker that allows you to separate the build process into multiple stages, each with its own base image and set of commands. This can help to optimize the size and security of the final Docker image.
