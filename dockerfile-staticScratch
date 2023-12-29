@@ -1,0 +1,21 @@
+# Create containers with statically linked applications
+# Another thing you could do is build the application with the libraries linked and use the scratch base container.
+
+FROM golang:alpine as builder
+
+WORKDIR /app
+
+COPY . /app/
+
+RUN go mod download; \
+    CGO_ENABLED=0 go build -ldflags="-s -w -extldflags=-static" -o bce -v .
+
+FROM scratch
+
+WORKDIR /app
+COPY --from=builder /app/bce /app/bce
+COPY static /app/static/
+COPY templates /app/templates/
+
+EXPOSE 5000
+ENTRYPOINT ["/app/bce"]
