@@ -63,3 +63,7 @@
 - **Distroless**: Minimal Docker images that omit package managers, shells, and other programs found in standard Linux distributions. However, unlike scratch images, distroless images include the bare minimum files and dependencies necessary for running applications. This can include things like the libc library and SSL certificates.
 
 In the context of Go applications, a distroless image provides advantages over a scratch image. It includes CA certificates and timezone data, which are often required by applications. It also includes a minimal /etc/passwd file for defining users, improving security by allowing the application to run as a non-root user.
+
+- **gcr.io/distroless/base**: This image contains a minimal Linux, glibc-based system. It is intended for use directly by "mostly-statically compiled" languages like Go, Rust or D. Statically compiled applications (Go) that do not require libc can use the gcr.io/distroless/static image, which contains: ca-certificates, a /etc/passwd entry for a root user, a /tmp directory, and tzdata. Applications that require libc but do not need libssl can use the gcr.io/distroless/base-nossl, which contains all of the packages in gcr.io/distroless/static, and glibc. Most other applications (and Go apps that require libc/cgo) should start with gcr.io/distroless/base, which contains all of the packages in gcr.io/distroless/static, glibc, libssl, and openssl (only debian11, removed from debian12 onward).
+
+Usage: Users are expected to include their compiled application and set the correct cmd in their image.
