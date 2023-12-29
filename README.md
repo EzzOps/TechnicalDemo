@@ -54,3 +54,12 @@
 - **apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false**: This command removes packages that were automatically installed to satisfy dependencies for some package and which are no longer needed. The -y flag is used to automatically answer yes to all prompts. The --auto-remove option is used to remove packages that were automatically installed to satisfy dependencies for other packages and are now no longer needed. The -o APT::AutoRemove::RecommendsImportant=false option ensures that even recommended packages that are no longer needed get removed. The purge option differs from remove in that it also removes any configuration files for the packages.
 
 - **rm -rf /var/lib/apt/lists/***: This command removes all the local copies of package lists retrieved from the package repositories. When you run apt-get update, it retrieves package lists from the repositories and stores them in /var/lib/apt/lists/. Over time, this can take up a significant amount of space. By removing these files, you can keep the Docker image size smaller. Note that if you need to install additional packages later, you'll need to run apt-get update again to retrieve the package lists.
+
+
+## 5. Docker Images
+
+- **Scratch**: An empty Docker image often used as a base for creating lightweight, standalone executables. It doesn't include any system libraries or utilities, so applications must be statically linked and have no dependencies.
+
+- **Distroless**: Minimal Docker images that omit package managers, shells, and other programs found in standard Linux distributions. However, unlike scratch images, distroless images include the bare minimum files and dependencies necessary for running applications. This can include things like the libc library and SSL certificates.
+
+In the context of Go applications, a distroless image provides advantages over a scratch image. It includes CA certificates and timezone data, which are often required by applications. It also includes a minimal /etc/passwd file for defining users, improving security by allowing the application to run as a non-root user.
