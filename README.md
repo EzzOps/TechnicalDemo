@@ -105,3 +105,68 @@ Key Concepts
 Scratch Image: An empty Docker image. Useful for creating very minimal Docker images, especially for statically compiled languages like Go.
 Static Linking: The process of including all library dependencies into the executable during the build process. This creates a standalone executable that can run in any environment, including a Docker container based on the scratch image.
 Multi-Stage Builds: A feature in Docker that allows you to separate the build process into multiple stages, each with its own base image and set of commands. This can help to optimize the size and security of the final Docker image.
+
+
+
+Distroless ---> in case we have a statically built executable
+Distroless --->X> Distroless containers are hard to work with in case we need to install additional dependencies, pre-compiled libraries, etc. Distroless images don't have a shell, consequently, they don't come with a package manager. We can add something like a busybox shell if we really want to alter things inside of it, but this kind of defies the purpose of using distroless images.
+
+
+----
+
+Creating a Non-Root User in a Scratch Docker Image
+When working with a scratch Docker image, you need to create the user in the builder image and then copy the /etc/passwd file to the scratch image. Here's how you can do it:
+
+Dockerfile Stages
+Stage 1: Go Application Build and User Creation
+RUN useradd -u 10001 appuser
+The RUN useradd -u 10001 appuser command creates a new user named appuser with user ID 10001.
+Stage 2: Final Docker Image with Non-Root User
+FROM scratch
+
+WORKDIR /app
+COPY --from=builder /etc/passwd /etc/passwd
+
+USER appuser
+COPY --chown=appuser:appuser --from=builder /app/app /app/
+
+ENTRYPOINT [ "/app/app" ]
+The COPY --from=builder /etc/passwd /etc/passwd command copies the /etc/passwd file from the builder image to the scratch image. This file contains the user information for appuser.
+The USER appuser command sets the user for subsequent commands and for running the container.
+The COPY --chown=appuser:appuser --from=builder /app/app /app/ command copies the Go application from the builder image to the scratch image and sets the owner to appuser.
+Key Concepts
+Non-Root User: Running your Docker containers as a non-root user can enhance the security of your application by reducing the potential impact of a compromised container.
+Scratch Image: An empty Docker image. Useful for creating very minimal Docker images, especially for statically compiled languages like Go.
+User Creation in Builder Image: When working with a scratch image, you need to create the user in the builder image and then copy the /etc/passwd file to the scratch image. This allows you to run the application as a non-root user in the scratch image.
+
+
+---
+The author discusses the challenges of using scratch Docker images, particularly the need to use a workaround to create a non-root user. They express a dislike for workarounds and question if more will be necessary with scratch images. They then discuss the importance of a trustworthy and easy-to-use base image, mentioning Alpine Linux as a common choice due to its small size and trustworthiness, despite its own issues. The author's personal preference is Distroless images, which they find small, secure, and easy to use. They highlight that Distroless images are based on Debian, use a non-root user, and do not require workarounds.
+---
+
+---
+Docker Multi-Stage Builds:
+
+Docker multi-stage builds allow you to use multiple FROM statements in your Dockerfile. Each FROM statement begins a new stage of the build.
+You can copy artifacts from one stage to another, leaving behind everything you don't want in the final image.
+This allows you to separate the build-time environment from the runtime environment, resulting in a smaller and more secure final image.
+Dockerfile Explanation:
+
+The Dockerfile you provided uses a multi-stage build to create a Docker image for a Python application.
+The first stage uses a Python image to create a build environment. The application is copied into this environment, the necessary Python packages are installed, and the uvicorn server is copied into the /app directory.
+The second stage uses a distroless Python image to create the final runtime environment. The prebuilt application and its dependencies are copied from the build environment into this new environment. The PYTHONPATH environment variable is set to ensure Python can find the installed packages.
+Distroless Images:
+
+Distroless images are minimal because they contain only your application and its runtime dependencies. They do not contain package managers, shells or any other programs you would find in a standard Linux distribution.
+Using distroless images can result in smaller Docker images, reduced attack surface, simpler images, and faster deployment.
+Alternatives to Distroless:
+
+Alpine Linux: A security-oriented, lightweight Linux distribution often used for Docker images.
+Scratch: A special Docker image that is empty. Used to build the smallest possible Docker images.
+BusyBox: Combines tiny versions of many common UNIX utilities into a single small executable.
+Slim versions of official images: Many official Docker images offer slim versions that include fewer packages and thus have a smaller size.
+Security Considerations:
+
+Vulnerabilities in the first stage image do not automatically affect the second stage image. In a multi-stage Docker build, each stage starts with a fresh image and doesn't carry over anything from the previous stages unless explicitly copied.
+It's important to keep your application code and dependencies up-to-date to avoid introducing vulnerabilities.
+---
