@@ -170,3 +170,76 @@ Security Considerations:
 Vulnerabilities in the first stage image do not automatically affect the second stage image. In a multi-stage Docker build, each stage starts with a fresh image and doesn't carry over anything from the previous stages unless explicitly copied.
 It's important to keep your application code and dependencies up-to-date to avoid introducing vulnerabilities.
 ---
+
+Distroless containers are based off of the Debian container
+
+Scratch Using the scratch "image" signals to the build process that you want the next command in the Dockerfile to be the first filesystem layer in your image.
+
+scratch is the smallest possible parent image. It works well if the final image is independent of any system tool.
+
+Alpine: Alpine Linux is a tiny distribution based on musl, BusyBox, and OpenRC. It's designed to be secure and small. For example, the 3.17 Docker image is only 3.22 MB.
+
+On the flip side, I already encountered issues because of Alpine's usage of musl instead of the more widespread glibc. Just last week, I heard about Alpaquita Linux, which is meant to solve this exact issue. The stream-glibc-230404 tag is 8.4 MB. It's twice bigger as Alpine but is still very respectable compared to regular Linux distros, e.g., Red Hat's 75.41 MB. * 
+
+
+Distroless images come with four standardized tags:
+
+latest
+nonroot: the image doesn't run as root, so it's more secure
+debug: the image contains a shell for debugging purposes
+debug-nonroot
+
+
+---
+
+kubectl run node --image=gcr.io/distroless/nodejs18-debian11:latest --command -- /nodejs/bin/node -e "while(true) { console.log('hello') }"
+
+The container starts an infinite NodeJS loop. We can check the logs with the expected results:
+kubectl logs node
+hello
+hello
+hello
+hello
+
+Imagine that we need to check what is happening inside the container.
+kubectl exec -it node -- sh
+
+We can use use kubectl debug magic to achieve it anyway:
+kubectl debug -it \
+              --image=bash \      #1
+              --target=node \     #2
+              node 
+
+---              
+
+OS-less scratch images can be used to run simple statically linked hello-world apps. But the absence of an OS deems running any enterprise-grade application impossible, as there are no
+
+Certificate data for proper TLS management;
+libc for dynamically compiled languages;
+Necessary components for regular work: timezone, passwd, group folders, etc.
+
+---
+
+gcr.io/distroless/static-debian11 — 2.34 MiB — includes ca-certificates, timezone data, a etc/passwd entry, and a /tmp directory. Statically-linked applications will benefit from this image, but what if your application has dynamic features and requires libc?
+
+gcr.io/distroless/base-debian11 — 17.3 MiB — is built upon the static image and includes glibc, libssl, and openssl. The image is optimal for dynamically-linked programs, but even in this case, you may require additional shared libraries, which takes us to another level (or layer, for that matter).
+
+gcr.io/distroless/cc-debian11 — 19.6 MiB — is built upon the base image and includes libgcc1 with dependencies. What about interpreted or VM-based languages (Java, Python, JavaScript)?
+
+gcr.io/distroless/java11-debian11 — 210 MiB — includes a base Linux image plus OpenJDK with dependencies.
+The more dynamic your application is, the more OS libraries it needs, so the image size bloats.
+https://bell-sw.com/blog/distroless-containers-for-security-and-size/
+![Alt text](image.png)
+
+---
+Inside distroless the nexts command does not works:
+
+RUN mkdir /app
+RUN cp ./source /app
+
+Instead must to use:
+
+WORKDIR /app it performs mkdir and cd implicitly.
+COPY ./app /app will create target directory
+---
+musl is an implementation of C standard library. It is more lightweight, faster and simpler than glibc used by other Linux distros, such as Ubuntu
