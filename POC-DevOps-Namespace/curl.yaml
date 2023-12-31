@@ -1,3 +1,5 @@
+# https://github.com/chainguard-dev/apko/blob/main/examples/
+# https://pkgs.alpinelinux.org/packages
 contents:
   repositories:
     - https://dl-cdn.alpinelinux.org/alpine/edge/main
