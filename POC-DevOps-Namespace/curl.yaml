@@ -1,0 +1,17 @@
+contents:
+  repositories:
+    - https://dl-cdn.alpinelinux.org/alpine/edge/main
+  packages:
+    - alpine-base
+    - curl
+entrypoint:
+  command: /bin/sh -l
+
+accounts:
+  groups:
+    - groupname: EzzOps
+      gid: 10000
+  users:
+    - username: EzzOps
+      uid: 10000
+  run-as: EzzOps
