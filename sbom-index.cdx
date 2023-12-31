@@ -1,0 +1,135 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "pkg:oci/apko-curl@sha256%3A158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+      "type": "container",
+      "name": "sha256:158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "version": "158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "description": "Multi-arch image index",
+      "purl": "pkg:oci/apko-curl@sha256%3A158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2"
+        }
+      ],
+      "components": [
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3Af1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121?arch=386&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121",
+          "version": "sha256:f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121",
+          "description": "apko image for linux/386",
+          "purl": "pkg:oci/apko-curl@sha256%3Af1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121?arch=386&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3Afba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e",
+          "version": "sha256:fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e",
+          "description": "apko image for linux/amd64",
+          "purl": "pkg:oci/apko-curl@sha256%3Afba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3A03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf?arch=arm&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf",
+          "version": "sha256:03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf",
+          "description": "apko image for linux/arm/v6",
+          "purl": "pkg:oci/apko-curl@sha256%3A03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf?arch=arm&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3A9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5?arch=arm&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5",
+          "version": "sha256:9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5",
+          "description": "apko image for linux/arm/v7",
+          "purl": "pkg:oci/apko-curl@sha256%3A9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5?arch=arm&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3A7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d",
+          "version": "sha256:7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d",
+          "description": "apko image for linux/arm64",
+          "purl": "pkg:oci/apko-curl@sha256%3A7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3A4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d?arch=ppc64le&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d",
+          "version": "sha256:4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d",
+          "description": "apko image for linux/ppc64le",
+          "purl": "pkg:oci/apko-curl@sha256%3A4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d?arch=ppc64le&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3A8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd?arch=riscv64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd",
+          "version": "sha256:8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd",
+          "description": "apko image for linux/riscv64",
+          "purl": "pkg:oci/apko-curl@sha256%3A8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd?arch=riscv64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/apko-curl@sha256%3Adebe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5?arch=s390x&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5",
+          "version": "sha256:debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5",
+          "description": "apko image for linux/s390x",
+          "purl": "pkg:oci/apko-curl@sha256%3Adebe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5?arch=s390x&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

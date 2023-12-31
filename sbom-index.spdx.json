@@ -1,0 +1,262 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "sbom-sha256:158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2023-12-29T08:03:05Z",
+    "creators": [
+      "Tool: apko (v0.13.2)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "name": "sha256:158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "versionInfo": "sha256:158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "filesAnalyzed": false,
+      "description": "Multi-arch image index",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Generated at image build time by apko",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3A158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121",
+      "name": "sha256:f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121",
+      "versionInfo": "sha256:f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3Af1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121?arch=386\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e",
+      "name": "sha256:fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e",
+      "versionInfo": "sha256:fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3Afba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf",
+      "name": "sha256:03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf",
+      "versionInfo": "sha256:03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3A03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf?arch=arm\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5",
+      "name": "sha256:9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5",
+      "versionInfo": "sha256:9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3A9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5?arch=arm\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d",
+      "name": "sha256:7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d",
+      "versionInfo": "sha256:7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3A7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d?arch=arm64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d",
+      "name": "sha256:4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d",
+      "versionInfo": "sha256:4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3A4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d?arch=ppc64le\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd",
+      "name": "sha256:8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd",
+      "versionInfo": "sha256:8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3A8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd?arch=riscv64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5",
+      "name": "sha256:debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5",
+      "versionInfo": "sha256:debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/apko-curl@sha256%3Adebe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5?arch=s390x\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-f1d084eddfe05c2fb17f03bff875b2f0ad74e6b5468c781f193aabb457716121"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-fba47a903a0a9b702ad5ce3ef52b4d4193a529bbfa88ad45dbd5d53b86296c9e"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-03085581ab1efd60ed5b3d095d9df0006b79c9c643cf37522a5195a7735d60cf"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-9d2b371c9a886e2e23b7dc145565e098e3b62038b08d51246163f189e5c10ab5"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-7247d22f6c8e1973dda8180ec42c382edbc96435a80861ccf11125900333d09d"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-4d61e946e0a947219175176f0be816566bf6f4cd1611d4525bd8b2600b57762d"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-8d6c73a0fb8919a83d86238968227ad83cd87775a4b44e035ade1cca145613fd"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-158097511eab93f953bd413a8e4e4b8be9fd634002181a119d13a5b028c45fd2",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-debe5b4c9fd29e01ccd3ea0af4f9f053687528fdf0f621fddbd27d5a519299b5"
+    }
+  ]
+}
