@@ -1,57 +1,14 @@
-# the reference https://github.com/Shrinidhikulkarni7/OracleClient_Alpine/blob/master/Dockerfile
-# https://gist.github.com/lfelipe1501/5c1981ec84b60e1dd249ca054a18ab5a
+FROM cgr.dev/chainguard/tomcat
 
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
+RUN rm -rf /usr/local/tomcat/webapps/docs
+RUN rm -rf /usr/local/tomcat/webapps/examples
+RUN rm -rf /usr/local/tomcat/webapps/manager
+RUN rm -rf /usr/local/tomcat/webapps/host-manager
 
-FROM ubuntu:20.04 as builder
+# Change directory to Tomcat webapps folder and download the latest Castle Mock war file
+WORKDIR  /usr/local/tomcat/webapps 
 
-
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    libaio1 \
-    libaio-dev \
-    unzip \
-    wget
-
-# Set up Oracle Instant Client
-RUN mkdir -p /opt/oracle
-ENV ORACLE_HOME=/opt/oracle/instantclient
-ENV PATH=$ORACLE_HOME:$PATH
-ENV LD_LIBRARY_PATH=$ORACLE_HOME
-
-# Download and extract Oracle Instant Client
-RUN wget -q https://download.oracle.com/otn_software/linux/instantclient/instantclient-basic-linuxx64.zip -P /opt/oracle \
-    && unzip -j /opt/oracle/instantclient-basic-linuxx64.zip -d /opt/oracle/instantclient \
-    && wget -q https://download.oracle.com/otn_software/linux/instantclient/instantclient-sqlplus-linuxx64.zip -P /opt/oracle \
-    && unzip -j /opt/oracle/instantclient-sqlplus-linuxx64.zip -d /opt/oracle/instantclient
-
-# Set environment variables
-RUN echo 'export ORACLE_HOME=/opt/oracle/instantclient' >> /etc/profile.d/sqlplus.sh \
-    && echo 'export LD_LIBRARY_PATH=$ORACLE_HOME' >> /etc/profile.d/sqlplus.sh \
-    && echo 'export PATH=$ORACLE_HOME:$PATH' >> /etc/profile.d/sqlplus.sh \
-    && echo 'export NLS_LANG=american_america.al32utf8' >> /etc/profile.d/sqlplus.sh
-
-# Adjust SQLPlus encoding to fix accent marks
-# RUN echo 'export LANG=en_US.UTF-8' >> /etc/profile.d/sqlplus.sh
-# RUN echo 'export CHARSET=AL32UTF8' >> /etc/profile.d/sqlplus.sh
-
-FROM scratch
-
-COPY --from=builder /bin/sh /bin/sh
-
-# Copy Oracle Instant Client from builder image
-COPY --from=builder /opt/oracle/instantclient /opt/oracle/instantclient
-
-# Copy additional shared libraries from builder image
-COPY --from=builder /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib/x86_64-linux-gnu/libm.so.6 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib/x86_64-linux-gnu/libpthread.so.0 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib/x86_64-linux-gnu/librt.so.1 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib/x86_64-linux-gnu/libaio.so.1 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib/x86_64-linux-gnu/libresolv.so.2 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib/x86_64-linux-gnu/libc.so.6 /lib/x86_64-linux-gnu/
-COPY --from=builder /lib64/ld-linux-x86-64.so.2 /lib64/
-
-# Set environment variables
-ENV ORACLE_HOME=/opt/oracle/instantclient
-ENV PATH=$ORACLE_HOME:$PATH
-ENV LD_LIBRARY_PATH=$ORACLE_HOME:/lib/x86_64-linux-gnu/
+COPY castlemock.war .
+# Expose HTTP port 8080
+EXPOSE 8080
