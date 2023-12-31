@@ -1,0 +1,8 @@
+FROM alpine:3.19 as builder
+RUN apk update && apk add busybox-extras
+
+FROM alpine:3.19
+COPY --from=builder /usr/bin/telnet /usr/bin/telnet
+
+RUN adduser -D nonroot
+USER nonroot
