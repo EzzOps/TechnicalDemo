@@ -243,3 +243,14 @@ WORKDIR /app it performs mkdir and cd implicitly.
 COPY ./app /app will create target directory
 ---
 musl is an implementation of C standard library. It is more lightweight, faster and simpler than glibc used by other Linux distros, such as Ubuntu
+
+
+
+
+| **Alpine Linux** | **Distroless** | **Scratch** |
+|-------------------|----------------|-------------|
+| Linux Distribution (Alpine) | Minimally-Purposed Base Images | Empty Base Image |
+| Package Manager (apk) | Language/Runtime (e.g., Java, Python, Node.js) | No Operating System Components |
+| Standard C Library (musl by default) | No Package Manager or Shell | No Package Manager |
+| General-Purpose | Secure-by-Default | Specialized for Minimalistic Deployments |
+
