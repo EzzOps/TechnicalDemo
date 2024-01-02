@@ -1,9 +1,9 @@
 {
   "SPDXID": "SPDXRef-DOCUMENT",
-  "name": "sbom-sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+  "name": "sbom-sha256:ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
   "spdxVersion": "SPDX-2.3",
   "creationInfo": {
-    "created": "2024-01-02T16:26:07Z",
+    "created": "2023-12-20T19:04:24Z",
     "creators": [
       "Tool: apko (v0.13.2)",
       "Organization: Chainguard, Inc"
@@ -13,13 +13,13 @@
   "dataLicense": "CC0-1.0",
   "documentNamespace": "https://spdx.org/spdxdocs/apko/",
   "documentDescribes": [
-    "SPDXRef-Package-sha256-2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f"
+    "SPDXRef-Package-sha256-ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088"
   ],
   "packages": [
     {
-      "SPDXID": "SPDXRef-Package-sha256-2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
-      "name": "sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
-      "versionInfo": "sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "SPDXID": "SPDXRef-Package-sha256-ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
+      "name": "sha256:ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
+      "versionInfo": "sha256:ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
       "filesAnalyzed": false,
       "description": "Multi-arch image index",
       "downloadLocation": "NOASSERTION",
@@ -29,21 +29,21 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f"
+          "checksumValue": "ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088"
         }
       ],
       "externalRefs": [
         {
           "referenceCategory": "PACKAGE-MANAGER",
-          "referenceLocator": "pkg:oci/kubectl@sha256%3A2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+          "referenceLocator": "pkg:oci/kubectl@sha256%3Aab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
           "referenceType": "purl"
         }
       ]
     },
     {
-      "SPDXID": "SPDXRef-Package-sha256-073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
-      "name": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
-      "versionInfo": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+      "SPDXID": "SPDXRef-Package-sha256-db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b",
+      "name": "sha256:db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b",
+      "versionInfo": "sha256:db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b",
       "filesAnalyzed": false,
       "downloadLocation": "NOASSERTION",
       "supplier": "Organization: Alpine Linux",
@@ -51,13 +51,35 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96"
+          "checksumValue": "db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b"
         }
       ],
       "externalRefs": [
         {
           "referenceCategory": "PACKAGE-MANAGER",
-          "referenceLocator": "pkg:oci/kubectl@sha256%3A073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceLocator": "pkg:oci/kubectl@sha256%3Adb6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47",
+      "name": "sha256:b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47",
+      "versionInfo": "sha256:b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/kubectl@sha256%3Ab7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47?arch=arm64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
           "referenceType": "purl"
         }
       ]
@@ -65,9 +87,14 @@
   ],
   "relationships": [
     {
-      "spdxElementId": "SPDXRef-Package-sha256-2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "spdxElementId": "SPDXRef-Package-sha256-ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
       "relationshipType": "VARIANT_OF",
-      "relatedSpdxElement": "SPDXRef-Package-sha256-073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96"
+      "relatedSpdxElement": "SPDXRef-Package-sha256-db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47"
     }
   ]
 }

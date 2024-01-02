@@ -4,30 +4,44 @@
   "version": 1,
   "components": [
     {
-      "bom-ref": "pkg:oci/kubectl@sha256%3A2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+      "bom-ref": "pkg:oci/kubectl@sha256%3Aab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
       "type": "container",
-      "name": "sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
-      "version": "2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "name": "sha256:ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
+      "version": "ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088",
       "description": "Multi-arch image index",
-      "purl": "pkg:oci/kubectl@sha256%3A2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+      "purl": "pkg:oci/kubectl@sha256%3Aab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f"
+          "content": "ab2156094032f147e97bdc1adc58958dcd1f2b826ea4e9f76aa0919a4dfc1088"
         }
       ],
       "components": [
         {
-          "bom-ref": "pkg:oci/kubectl@sha256%3A073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "bom-ref": "pkg:oci/kubectl@sha256%3Adb6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
           "type": "container",
-          "name": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
-          "version": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+          "name": "sha256:db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b",
+          "version": "sha256:db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b",
           "description": "apko image for linux/amd64",
-          "purl": "pkg:oci/kubectl@sha256%3A073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "purl": "pkg:oci/kubectl@sha256%3Adb6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
           "hashes": [
             {
               "alg": "SHA-256",
-              "content": "073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96"
+              "content": "db6eefcc21e5f33bd32cb597a2a82ced56454bf321928765d07576baa2a7b99b"
+            }
+          ]
+        },
+        {
+          "bom-ref": "pkg:oci/kubectl@sha256%3Ab7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47",
+          "version": "sha256:b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47",
+          "description": "apko image for linux/arm64",
+          "purl": "pkg:oci/kubectl@sha256%3Ab7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "b7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47"
             }
           ]
         }

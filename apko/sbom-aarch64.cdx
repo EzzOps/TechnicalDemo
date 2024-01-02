@@ -1,0 +1,82 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "pkg:oci/kubectl@sha256%3Ab7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+      "type": "container",
+      "name": "",
+      "version": "",
+      "description": "apko container image",
+      "purl": "pkg:oci/kubectl@sha256%3Ab7b76789a6cdb4ea10d7fdc52c52395dd7eae3dea6d54bc62bc1297a147bab47?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+      "components": [
+        {
+          "bom-ref": "pkg:oci/kubectl@sha256%3Abd005139658ad1bb6830de7cb8ab3abe78915b42655449ea9fc3d499b4cab193?arch=arm64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "operating-system",
+          "name": "Wolfi",
+          "version": "20230201",
+          "description": "apko OS layer",
+          "purl": "pkg:oci/kubectl@sha256%3Abd005139658ad1bb6830de7cb8ab3abe78915b42655449ea9fc3d499b4cab193?arch=arm64&mediaType=application%2Fvnd.oci.image.layer.v1.tar%2Bgzip&os=linux",
+          "components": [
+            {
+              "bom-ref": "pkg:apk/wolfi/ca-certificates-bundle@20230506-r1?arch=aarch64",
+              "type": "operating-system",
+              "name": "ca-certificates-bundle",
+              "version": "20230506-r1",
+              "description": "",
+              "purl": "pkg:apk/wolfi/ca-certificates-bundle@20230506-r1?arch=aarch64",
+              "licenses": [
+                {
+                  "expression": "MPL-2.0 AND MIT"
+                }
+              ]
+            },
+            {
+              "bom-ref": "pkg:apk/wolfi/kubectl-1.29@1.29.0-r0?arch=aarch64",
+              "type": "operating-system",
+              "name": "kubectl-1.29",
+              "version": "1.29.0-r0",
+              "description": "A command line tool for communicating with a Kubernetes API server",
+              "purl": "pkg:apk/wolfi/kubectl-1.29@1.29.0-r0?arch=aarch64",
+              "licenses": [
+                {
+                  "expression": "Apache-2.0"
+                }
+              ]
+            },
+            {
+              "bom-ref": "pkg:apk/wolfi/wolfi-baselayout@20230201-r7?arch=aarch64",
+              "type": "operating-system",
+              "name": "wolfi-baselayout",
+              "version": "20230201-r7",
+              "description": "baselayout data for Wolfi",
+              "purl": "pkg:apk/wolfi/wolfi-baselayout@20230201-r7?arch=aarch64",
+              "licenses": [
+                {
+                  "expression": "MIT"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:apk/wolfi/ca-certificates-bundle@20230506-r1?arch=aarch64",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:apk/wolfi/kubectl-1.29@1.29.0-r0?arch=aarch64",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:apk/wolfi/wolfi-baselayout@20230201-r7?arch=aarch64",
+      "dependsOn": [
+        "pkg:apk/wolfi/ca-certificates-bundle?arch=aarch64"
+      ]
+    }
+  ]
+}
