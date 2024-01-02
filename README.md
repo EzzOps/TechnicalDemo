@@ -254,3 +254,60 @@ musl is an implementation of C standard library. It is more lightweight, faster 
 | Standard C Library (musl by default) | No Package Manager or Shell | No Package Manager |
 | General-Purpose | Secure-by-Default | Specialized for Minimalistic Deployments |
 
+
+
+Building a Wolfi Package
+it’s important to note that Wolfi is rather new; it just recently crossed the mark of 1,000 packages in the Wolfi OS repository. That means some packages that you would find in a more established distro won’t be available yet in Wolfi
+all packages are built directly from source and signed with cryptographic
+What is Wolfi and how does it compare to Alpine? 
+Wolfi is our Linux undistro designed from the ground up to support newer computing paradigms such as containers. Although Wolfi has a few similar design principles as Alpine (such as using apk), it is a different distribution that is focused on supply chain security. Unlike Alpine, Wolfi does not currently build its own Linux kernel, instead relying on the host environment (e.g. a container runtime) to provide one.
+
+Can I use Wolfi on the Desktop? 
+No. Wolfi is an un-distro, or distroless base to be used within the container / OCI ecosystem. Desktop distributions require additional software that is out of scope for Wolfi’s roadmap.
+
+
+
+---
+
+# Documentation for `gcr.io/distroless/base`, `gcr.io/distroless/base-nossl` and `gcr.io/distroless/static`
+
+## Image Contents
+
+This image contains a minimal Linux, glibc-based system. It is intended for use directly by "mostly-statically compiled" languages like Go, Rust or D.
+
+Statically compiled applications (Go) that do not require libc can use the `gcr.io/distroless/static` image, which contains:
+
+* ca-certificates
+* A /etc/passwd entry for a root user
+* A /tmp directory
+* tzdata
+
+Applications that require libc but do not need libssl can use the `gcr.io/distroless/base-nossl`, which contains all
+of the packages in `gcr.io/distroless/static`, and
+
+* glibc
+
+Most other applications (and Go apps that require libc/cgo) should start with `gcr.io/distroless/base`, which contains all
+of the packages in `gcr.io/distroless/static`, and 
+
+* glibc
+* libssl
+* openssl (only debian11, removed from debian12 onward)
+
+## Usage
+
+Users are expected to include their compiled application and set the correct cmd in their image.
+---
+# Documentation for `gcr.io/distroless/cc`
+
+## Image Contents
+
+This image contains a minimal Linux, glibc runtime for "mostly-statically compiled" languages like Rust and D.
+
+Specifically, the image contains everything in the [base image](../base/README.md), plus:
+
+* libgcc1 and its dependencies.
+
+## Usage
+
+Users are expected to include their compiled application and set the correct CMD in their image.
