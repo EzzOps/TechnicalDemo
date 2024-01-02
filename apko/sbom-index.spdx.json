@@ -1,0 +1,73 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "sbom-sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+  "spdxVersion": "SPDX-2.3",
+  "creationInfo": {
+    "created": "2024-01-02T16:26:07Z",
+    "creators": [
+      "Tool: apko (v0.13.2)",
+      "Organization: Chainguard, Inc"
+    ],
+    "licenseListVersion": "3.16"
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://spdx.org/spdxdocs/apko/",
+  "documentDescribes": [
+    "SPDXRef-Package-sha256-2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f"
+  ],
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-sha256-2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "name": "sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "versionInfo": "sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "filesAnalyzed": false,
+      "description": "Multi-arch image index",
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "sourceInfo": "Generated at image build time by apko",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/kubectl@sha256%3A2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+          "referenceType": "purl"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-Package-sha256-073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+      "name": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+      "versionInfo": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+      "filesAnalyzed": false,
+      "downloadLocation": "NOASSERTION",
+      "supplier": "Organization: Alpine Linux",
+      "primaryPackagePurpose": "CONTAINER",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96"
+        }
+      ],
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:oci/kubectl@sha256%3A073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96?arch=amd64\u0026mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson\u0026os=linux",
+          "referenceType": "purl"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-Package-sha256-2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "relationshipType": "VARIANT_OF",
+      "relatedSpdxElement": "SPDXRef-Package-sha256-073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96"
+    }
+  ]
+}

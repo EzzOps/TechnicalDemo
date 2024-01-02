@@ -1,0 +1,37 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.4",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "pkg:oci/kubectl@sha256%3A2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+      "type": "container",
+      "name": "sha256:2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "version": "2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f",
+      "description": "Multi-arch image index",
+      "purl": "pkg:oci/kubectl@sha256%3A2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f?mediaType=application%2Fvnd.oci.image.index.v1%2Bjson",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2bd9cd6b5111557e2cd56823daedb6d1756f48ecc60c0c80cd07f054f61c036f"
+        }
+      ],
+      "components": [
+        {
+          "bom-ref": "pkg:oci/kubectl@sha256%3A073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "type": "container",
+          "name": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+          "version": "sha256:073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96",
+          "description": "apko image for linux/amd64",
+          "purl": "pkg:oci/kubectl@sha256%3A073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96?arch=amd64&mediaType=application%2Fvnd.oci.image.manifest.v1%2Bjson&os=linux",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "073cc263c8f2d8b72eb84303b623e875084f324240ebdf7264ba20f6f9375b96"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
