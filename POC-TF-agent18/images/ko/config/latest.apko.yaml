@@ -1,10 +1,24 @@
 contents:
+  keyring:
+    - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+  repositories:
+    - https://packages.wolfi.dev/os
   packages:
+    - wolfi-baselayout
     - busybox
-    - build-base
-    - go
-    - ko
+    - kustomize
+    - docker
+    - python-3
+    - py3-pip
+    - openjdk-11
+    - glibc-locale-en
+    - libstdc++
+    - gradle-8
+    - openjdk-11-default-jvm
+    - maven
+    - jq
     - git
+    - ca-certificates-bundle
 
 accounts:
   groups:
@@ -17,4 +31,7 @@ accounts:
   run-as: 65532
 
 entrypoint:
-  command: /usr/bin/ko
+  command: /usr/bin/sh
+
+archs:
+  - amd64  
