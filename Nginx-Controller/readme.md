@@ -36,5 +36,55 @@ This document details the communication flow from the Public Endpoint to the tar
 
 ## Visualization
 
-[Public Endpoint] --> [NGINX Ingress Controller Pod] --> [Kubernetes API] --> [NGINX Configuration Generation] -->
-[NGINX Worker Processes] --> [Service Discovery] --> [Backend Pods]
+                         ┌─────────────────────┐
+                         │ Public Endpoint     │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ NGINX Ingress       │
+                         │ Controller Pod     │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ Kubernetes API      │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ NGINX Configuration │
+                         │ Generation          │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ NGINX Worker        │
+                         │ Processes           │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ HTTP/HTTPS Traffic  │
+                         │ Handling            │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ Layer 7 Load        │
+                         │ Balancing           │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ Service Discovery   │
+                         └─────────────────────┘
+                                       │
+                                       ▼
+                         ┌─────────────────────┐
+                         │ Backend Pods        │
+                         └─────────────────────┘
+
+
+
+
