@@ -1,0 +1,18 @@
+monopod/monopod
+generated/
+.idea
+
+# Ignore generated credentials from google-github-actions/auth
+gha-creds-*.json
+
+.terraform*
+terraform.tfstate*
+plan.out*
+
+# Files added by running `apko build` directly
+sbom-*.json
+sbom-*.cdx
+*.tar
+
+# macOS
+.DS_Store

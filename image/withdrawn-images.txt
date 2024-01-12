@@ -1,0 +1,2 @@
+cgr.dev/chainguard/crossplane-xfn:latest
+cgr.dev/chainguard/crossplane-xfn:latest-dev
