@@ -6,5 +6,6 @@
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
 	},
 	"privileged": true,
-	"remoteUser": "root"
+	"remoteUser": "root",
+	"postCreateCommand": "apk update && apk add terraform docker"
 }
