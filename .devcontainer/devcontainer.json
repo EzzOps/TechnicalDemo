@@ -2,7 +2,6 @@
 	"name": "Wolfi SDK",
 	"image": "ghcr.io/wolfi-dev/sdk:latest@sha256:515a2c5072753f81ce2cbb81bda54b035aefcdb41d7249070009fc018fecd4c9",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1",
 		"terraform": "ghcr.io/devcontainers/features/terraform:1"
 	},
 	"remoteEnv": {
