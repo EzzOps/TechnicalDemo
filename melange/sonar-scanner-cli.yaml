@@ -1,0 +1,30 @@
+package:
+  name: sonar-scanner-cli
+  version: 5.0.1.3006
+  epoch: 0
+  description: Scanner CLI for SonarQube and SonarCloud
+  copyright:
+    - license: LGPL-3.0 license
+
+environment:
+  contents:
+    keyring:
+      - https://packages.wolfi.dev/os/wolfi-signing.rsa.pub
+    repositories:
+      - https://packages.wolfi.dev/os
+    packages:
+      - build-base
+      - busybox
+      - ca-certificates-bundle
+      - unzip
+
+
+pipeline:
+  - uses: fetch
+    with:
+      uri: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
+
+  - runs: |
+      unzip sonar-scanner-cli-${{package.version}}-linux.zip 
+      mv sonar-scanner-${{package.version}}-linux  ${{targets.contextdir}}/opt/sonar-scanner
+      ln -s /opt/sonar-scanner/bin/sonar-scanner ${{targets.contextdir}}/usr/bin/sonar-scanner
