@@ -1,0 +1,31 @@
+{
+  "Signature": null,
+  "Description": "",
+  "Packages": [
+    {
+      "Name": "hello",
+      "Version": "2.12-r0",
+      "Arch": "x86_64",
+      "Description": "the GNU hello world program",
+      "License": "GPL-3.0-or-later",
+      "Origin": "hello",
+      "Maintainer": "",
+      "URL": "",
+      "Checksum": "hfMPPb2FpXhdGYkdH5ROzfcnFe0=",
+      "Dependencies": [
+        "so:libc.musl-x86_64.so.1"
+      ],
+      "Provides": [
+        "cmd:hello=2.12-r0"
+      ],
+      "InstallIf": null,
+      "Size": 36228,
+      "InstalledSize": 137777,
+      "ProviderPriority": 0,
+      "BuildTime": "1970-01-01T00:00:00Z",
+      "BuildDate": 0,
+      "RepoCommit": "",
+      "Replaces": null
+    }
+  ]
+}
