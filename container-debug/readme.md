@@ -2,7 +2,7 @@
 ```
 docker exec
 ```
-this command start a temp container, and this conainer use the same namespace and cgroup
+this command start a temp container, and this conainer use the same namespace and cgroups
 FYI, two containers can share the same namespace and cgroups
 
 ```bash
