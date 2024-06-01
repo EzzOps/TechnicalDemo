@@ -4,6 +4,7 @@ from urllib.parse import urlparse, urljoin
 
 
 
+
 def get_all_paths(url):
     response = requests.get(url)
     
