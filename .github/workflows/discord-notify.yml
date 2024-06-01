@@ -27,8 +27,8 @@ jobs:
         PHOTO_URL: ${{ env.PHOTO_URL }}
       run: |
         COMMIT_INFO=$(git log -1 --pretty=format:"%H - %an: %s")
-        MOTIVATIONAL_MESSAGE="Great job, $GITHUB_ACTOR! Keep up the excellent work and keep those commits coming! Remember, our deadline is on 6/6. Let's make it happen!"
-        PAYLOAD=$(jq -n --arg content "New push to branch \`${{ github.ref_name }}\`:\n\`\`\`$COMMIT_INFO\`\`\`\n\n$MOTIVATIONAL_MESSAGE" \
+        MOTIVATIONAL_MESSAGE="🚀 **Fantastic work, $GITHUB_ACTOR!** 🚀\n\nYou've just pushed another commit:\n\n\`\`\`$COMMIT_INFO\`\`\`\n\nYour dedication is really making a difference! 🌟 Keep the momentum going and let's push even harder. Our deadline on **6/6** is fast approaching, and with your continuous efforts, we're sure to achieve our goals!\n\n**Let's crush this together! 💪**"
+        PAYLOAD=$(jq -n --arg content "New push to branch \`${{ github.ref_name }}\`:\n\n$MOTIVATIONAL_MESSAGE" \
                       --arg image_url "$PHOTO_URL" \
                       '{username: "Git Bot", content: $content, embeds: [{image: {url: $image_url}}]}')
         curl -H "Content-Type: application/json" -X POST -d "$PAYLOAD" $DISCORD_WEBHOOK_URL
